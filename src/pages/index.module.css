@@ -1,0 +1,246 @@
+.heroBanner {
+  padding: 5rem 0 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(135deg, rgba(22, 23, 26, 0.98) 0%, rgba(30, 32, 35, 0.98) 100%),
+    url('/img/rust-landscape.png') center/cover no-repeat;
+}
+
+/* Main Panel */
+.mainPanel {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(30, 32, 35, 0.95);
+  border: 1px solid rgba(122, 128, 128, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.panelHeader h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f4f4f4;
+  letter-spacing: 2px;
+}
+
+.badge {
+  background: rgba(122, 128, 128, 0.3);
+  color: #b0b0b0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Server List */
+.serverList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.serverRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(22, 23, 26, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(122, 128, 128, 0.2);
+  transition: all 0.2s ease;
+}
+
+.serverRow:hover {
+  border-color: rgba(122, 128, 128, 0.4);
+  background: rgba(22, 23, 26, 0.7);
+}
+
+.region {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f4f4f4;
+}
+
+.ip {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #8a9090;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.players {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  white-space: nowrap;
+}
+
+/* Wipe Info */
+.wipeInfo {
+  text-align: center;
+  color: #808080;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background: rgba(122, 128, 128, 0.1);
+  border-radius: 4px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.actions a {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.actions a:first-child {
+  background: linear-gradient(135deg, #7a8080 0%, #8a9090 100%);
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.actions a:first-child:hover {
+  background: linear-gradient(135deg, #8a9090 0%, #9aa0a0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(122, 128, 128, 0.4);
+  color: #fff;
+}
+
+.actions a:last-child {
+  background: transparent;
+  color: #b0b0b0;
+  border: 2px solid rgba(122, 128, 128, 0.5);
+}
+
+.actions a:last-child:hover {
+  background: rgba(122, 128, 128, 0.1);
+  border-color: rgba(122, 128, 128, 0.8);
+  color: #f4f4f4;
+  transform: translateY(-2px);
+}
+
+/* Quick Access Section */
+.quickAccess {
+  padding: 4rem 0;
+}
+
+.quickAccessCard {
+  display: block;
+  padding: 2rem;
+  height: 100%;
+  background-color: #1e2023;
+  border: 2px solid rgba(122, 128, 128, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.quickAccessCard:hover {
+  border-color: rgba(122, 128, 128, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.cardContent {
+  text-align: center;
+}
+
+.cardIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #16171a;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #f4f4f4;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 0 2rem;
+  }
+
+  .mainPanel {
+    margin: 0 1rem;
+  }
+
+  .panelHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .panelHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .serverRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .ip {
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .quickAccessCard {
+    margin-bottom: 1.5rem;
+  }
+}

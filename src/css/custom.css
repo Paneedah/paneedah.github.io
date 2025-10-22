@@ -1,0 +1,325 @@
+/**
+ * BritRust Wiki Custom Styles
+ * Rust-inspired PvE server theme with grainy texture
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --ifm-font-family-base: 'Roboto', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Color Variables ===== */
+:root {
+  --ifm-color-primary: #7a8080;
+  --ifm-color-primary-dark: #6d7373;
+  --ifm-color-primary-darker: #656d6d;
+  --ifm-color-primary-darkest: #525959;
+  --ifm-color-primary-light: #878d8d;
+  --ifm-color-primary-lighter: #8f9595;
+  --ifm-color-primary-lightest: #a4a9a9;
+  
+  --ifm-background-color: #16171a;
+  --ifm-font-color-base: #d4d4d4;
+}
+
+/* [data-theme='dark'] {
+  --ifm-color-primary: #8a9090;
+  --ifm-background-color: #16171a;
+  --ifm-background-surface-color: #1e2023;
+
+  THEMES STILL A TODO! MAYBE?
+} */
+
+/* ===== Grainy Texture Overlay ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ===== Navbar Styling ===== */
+.navbar {
+  background-color: rgba(30, 32, 35, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(122, 128, 128, 0.2);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar__link--active {
+  color: var(--ifm-color-primary-lightest) !important;
+}
+
+/* ===== Sidebar Styling ===== */
+.menu {
+  background-color: #16171a;
+  padding: 1rem 0;
+}
+
+.theme-doc-sidebar-container {
+  background-color: #0d0e10;
+  border-right: 1px solid rgba(70, 70, 70, 0.3);
+}
+
+/* Section Separators - Add lines between major sections */
+.menu > .menu__list > .menu__list-item:not(:first-child) {
+  border-top: 1px solid rgba(70, 70, 70, 0.3);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+/* First item shouldn't have separator */
+.menu__list > .menu__list-item:first-child,
+.menu__list-item-collapsible:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Category Headers */
+.menu__list-item {
+  margin: 0;
+}
+
+.menu__link {
+  border-radius: 0;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+}
+
+.menu__link:hover {
+  background-color: rgba(122, 128, 128, 0.1);
+  color: #e0e0e0;
+}
+
+/* Category titles (collapsible headers) */
+.menu__list-item-collapsible > .menu__link {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.95rem;
+  /* padding: 0.75rem 1rem; */
+}
+
+.menu__list-item-collapsible > .menu__link:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.menu__link {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: rgba(122, 128, 128, 0.15);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.menu__link--active {
+  background-color: transparent;
+  color: #ff6b35;
+  font-weight: 500;
+  border-left: none;
+  padding-left: 1rem;
+}
+
+.menu__link--active:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+}
+
+/* Category arrow/chevron */
+.menu__link--sublist-caret:after {
+  background-size: 1.25rem 1.25rem;
+  filter: brightness(3) invert(1);
+  opacity: 0.7;
+}
+
+.menu__list-item-collapsible .menu__link--sublist-caret:after {
+  filter: brightness(3.5) invert(1);
+  opacity: 0.85;
+}
+
+.menu__list-item-collapsible:hover .menu__link--sublist-caret:after {
+  opacity: 1;
+}
+
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  filter: brightness(3) invert(1);
+  opacity: 0.8;
+}
+
+/* ===== Cards & Containers ===== */
+.card {
+  background-color: #1e2023;
+  border: 1px solid rgba(122, 128, 128, 0.3);
+}
+
+.card:hover {
+  border-color: rgba(122, 128, 128, 0.5);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===== Content Area ===== */
+article {
+  background-color: rgba(30, 32, 35, 0.4);
+  backdrop-filter: blur(2px);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* ===== Code Blocks ===== */
+div[class^='codeBlockContainer'] {
+  background-color: rgba(22, 23, 26, 0.8);
+  border: 1px solid rgba(122, 128, 128, 0.2);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Links ===== */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-lightest);
+  text-decoration: none;
+}
+
+/* ===== Admonitions ===== */
+.admonition {
+  border-left-width: 3px;
+  background-color: rgba(30, 32, 35, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: rgba(22, 23, 26, 0.95);
+  border-top: 1px solid rgba(122, 128, 128, 0.2);
+}
+
+/* ===== Pagination ===== */
+.pagination-nav__link {
+  background-color: rgba(30, 32, 35, 0.6);
+  border: 1px solid rgba(122, 128, 128, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pagination-nav__link:hover {
+  background-color: rgba(122, 128, 128, 0.15);
+  border-color: rgba(122, 128, 128, 0.5);
+  transform: translateX(4px);
+}
+
+/* ===== Tables ===== */
+table {
+  background-color: rgba(30, 32, 35, 0.4);
+  border: 1px solid rgba(122, 128, 128, 0.2);
+}
+
+thead {
+  background-color: rgba(122, 128, 128, 0.2);
+}
+
+tr:hover {
+  background-color: rgba(122, 128, 128, 0.1);
+}
+
+/* ===== TOC (Table of Contents) ===== */
+.table-of-contents {
+  border-left: 2px solid rgba(122, 128, 128, 0.3);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary-lightest);
+  font-weight: 700;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(22, 23, 26, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 128, 128, 0.4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 128, 128, 0.6);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  border-bottom: 2px solid rgba(122, 128, 128, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+/* ===== Hero Section (Home Page) ===== */
+.hero {
+  background: linear-gradient(135deg, rgba(30, 32, 35, 0.9) 0%, rgba(22, 23, 26, 0.95) 100%);
+  border-bottom: 2px solid rgba(122, 128, 128, 0.3);
+}
+
+.hero__title {
+  color: var(--ifm-color-primary-lightest);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Buttons ===== */
+.button {
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-light);
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(122, 128, 128, 0.3);
+}
+
+.button--secondary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.button--secondary:hover {
+  background-color: rgba(122, 128, 128, 0.15);
+  border-color: var(--ifm-color-primary-light);
+}
