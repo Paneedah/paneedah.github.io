@@ -63,7 +63,7 @@ const QuickAccessItems: QuickAccessItem[] = [
     title: 'PvE Content',
     icon: '⚔️',
     description: 'Bosses, dungeons, and raid information',
-    link: '/docs/pve-content/bosses',
+    link: '/docs/bosses/bosses',
   },
   {
     title: 'Server Features',
