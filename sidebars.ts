@@ -7,9 +7,9 @@ const sidebars: SidebarsConfig = {
       label: 'Server Info',
       collapsed: false,
       items: [
-        'intro',
-        'rules',
-        'wipe-info',
+        'server-info/intro',
+        'server-info/rules',
+        'server-info/wipe-info',
         'server-info/connection',
         'server-info/commands',
       ],
@@ -31,8 +31,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'bosses/patrol-helicopter',
         'bosses/bradley-apc',
+        'pve-content/buyable-raids',
         'pve-content/dungeons',
-        'pve-content/raids',
       ],
     },
     {
