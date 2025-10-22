@@ -35,7 +35,7 @@ function HomepageHeader() {
           <div className={styles.wipeInfo}>Next wipe in 0 days</div>
           
           <div className={styles.actions}>
-            <Link to="/docs/intro">Get Started</Link>
+            <Link to="/docs/server-info/intro">Get Started</Link>
             <Link to="/docs/server-info/connection">Server Info</Link>
           </div>
         </div>
