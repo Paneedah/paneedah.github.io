@@ -12,6 +12,7 @@
 
 /* ===== Color Variables ===== */
 :root {
+  /* Neutral grays */
   --ifm-color-primary: #7a8080;
   --ifm-color-primary-dark: #6d7373;
   --ifm-color-primary-darker: #656d6d;
@@ -24,13 +25,11 @@
   --ifm-font-color-base: #d4d4d4;
 }
 
-/* [data-theme='dark'] {
+[data-theme='dark'] {
   --ifm-color-primary: #8a9090;
   --ifm-background-color: #16171a;
   --ifm-background-surface-color: #1e2023;
-
-  THEMES STILL A TODO! MAYBE?
-} */
+}
 
 /* ===== Grainy Texture Overlay ===== */
 body::before {
@@ -80,6 +79,13 @@ body::before {
   padding-top: 1.5rem;
 }
 
+/* Alternative: Target top-level collapsible categories */
+.menu__list-item-collapsible:not(:first-child) {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(70, 70, 70, 0.3);
+}
+
 /* First item shouldn't have separator */
 .menu__list > .menu__list-item:first-child,
 .menu__list-item-collapsible:first-child {
@@ -95,6 +101,7 @@ body::before {
 
 .menu__link {
   border-radius: 0;
+  padding: 0.5rem 1rem;
   transition: all 0.2s ease;
   font-size: 0.9rem;
   color: #a0a0a0;
@@ -110,7 +117,7 @@ body::before {
   font-weight: 700;
   color: #ffffff;
   font-size: 0.95rem;
-  /* padding: 0.75rem 1rem; */
+  padding: 0.75rem 1rem;
 }
 
 .menu__list-item-collapsible > .menu__link:hover {
@@ -141,7 +148,7 @@ body::before {
   color: #ff6b35;
 }
 
-/* Category arrow/chevron */
+/* Category arrow/chevron - FIXED FOR VISIBILITY */
 .menu__link--sublist-caret:after {
   background-size: 1.25rem 1.25rem;
   filter: brightness(3) invert(1);
@@ -322,4 +329,34 @@ h1 {
 .button--secondary:hover {
   background-color: rgba(122, 128, 128, 0.15);
   border-color: var(--ifm-color-primary-light);
+}
+
+/* ===== Mobile Fixes ===== */
+
+@media (max-width: 996px) {
+  .navbar-sidebar {
+    position: absolute;
+    height: 100vh;
+    width: 40vh;
+    z-index: 200;
+  }
+  
+  .navbar-sidebar__backdrop {
+    z-index: 199;
+  }
+  
+  .navbar-sidebar .menu {
+    background-color: #16171a;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .row > .col {
+    margin-bottom: 2rem;
+  }
+  
+  .row > .col:last-child {
+    margin-bottom: 0;
+  }
 }
