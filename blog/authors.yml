@@ -2,6 +2,12 @@ paneedah:
   name: Paneedah
   title: Developer @ britRust
   image_url: https://avatars.githubusercontent.com/u/76911089?v=4
-  page: true
   socials:
     github: paneedah
+
+jari:
+  name: Jari
+  title: Developer @ britRust
+  image_url: https://cdn.discordapp.com/avatars/96506429598367744/f01366edebe70b306ed7000d9b373787.png
+  # socials:
+  #   github: idfk yet, figuring that out
