@@ -3,236 +3,635 @@ import '@site/src/css/prestige.css';
 # Passive Prestige Perks
 
 <div class="prestige-notes">
-  <h3>Notes & Tips</h3>
+  <h3>📋 Important Information</h3>
   <ul>
-    <li>🏃 You have to use `/togglerun` to gain your bonus running speed.</li>
-    <li>🏊 You have to use `/toggleswim` to gain your bonus swimming speed.</li>
-    <li>🌙 Rested EXP bonuses stack on top of base XP, this means you get more EXP for doing the same stuff.</li>
-    <li>🛒 Shop discounts apply to all in-game purchases from the `/s` store (when bought from the server).</li>
-    <li>🔓 Certain Prestiges unlock special abilities or quests, like Prestige 10 unlocking the Laginator quest.</li>
-    <li>⚡ TC Upgrade multiplier affects how fast your Tool Cupboard takes to upgrade built structures.</li>
-    <li>🎒 Backpack size increases with each prestige, or you can get more slots by <a href="https://store.britspve.com/">Purchasing VIP!</a></li>
+    <li>🏃 Use <code>/togglerun</code> to activate your bonus running speed</li>
+    <li>🏊 Use <code>/toggleswim</code> to activate your bonus swimming speed</li>
+    <li>🌙 Rested XP bonuses stack on top of base XP for increased gains</li>
+    <li>🛒 Shop discounts apply to all purchases from the <code>/s</code> store</li>
+    <li>🔓 Special abilities unlock at certain prestiges (Laginator at P10)</li>
+    <li>⚡ TC Upgrade multiplier speeds up Tool Cupboard structure upgrades</li>
+    <li>🎒 Backpack size increases with prestige or <a href="https://store.britspve.com/">purchase VIP</a></li>
   </ul>
-  <p>All perks are automatically applied when you reach the corresponding Prestige level. You can prestige by using the `/st` command, once you reach level 100!</p>
-  <p>All prestige perks/benefits carry over when you prestige again! E.g. prestige from 1 -> 2, you keep the T1 techtree as well as unlocking T2!</p>
+  <p><strong>All perks are automatically applied</strong> when you reach the corresponding prestige level. Prestige using <code>/st</code> once you reach level 100!</p>
+  <p><strong>Perks are cumulative!</strong> When you prestige from 1 → 2, you keep T1 benefits AND unlock T2 benefits.</p>
 </div>
-
 
 <div class="prestige-grid">
 
   <!-- Prestige 1 -->
   <div class="prestige-card">
     <h3>Prestige 1</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 18 Slots</span>
-      <span class="badge">❤️ Health: 110 HP</span>
-      <span class="badge">⚡ TC Upgrade: 1.5x Faster</span>
-      <span class="badge">🔧 Start: T1 Techtree</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⚒️ Crafting: 25% Faster</span>
-      <span class="badge">🛢️ Oil Refineries: 3 Total</span>
-      <span class="badge">🔥 Furnaces: +2</span>
-      <span class="badge">🌱 Planters: 10</span>
-      <span class="badge">🪵 Place Entities: 1200</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +20%</span>
-      <span class="badge">💡 Headlight: /light</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">18 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">110 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">1.5x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔧</span>
+            <span class="stat-label">Workbench Access</span>
+            <span class="stat-value">T1</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⚒️</span>
+            <span class="stat-label">Crafting Speed</span>
+            <span class="stat-value">25% Faster</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🛢️</span>
+            <span class="stat-label">Oil Refineries</span>
+            <span class="stat-value">3</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔥</span>
+            <span class="stat-label">Furnaces</span>
+            <span class="stat-value">8</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌱</span>
+            <span class="stat-label">Planters</span>
+            <span class="stat-value">10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🪵</span>
+            <span class="stat-label">Place Entities</span>
+            <span class="stat-value">1200</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+20%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">💡</span>
+            <span class="stat-label">Headlight</span>
+            <span class="stat-value">/light</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 2 -->
   <div class="prestige-card">
     <h3>Prestige 2</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 24 Slots</span>
-      <span class="badge">❤️ Health: 120 HP</span>
-      <span class="badge">⚡ TC Upgrade: 2x Faster</span>
-      <span class="badge">🔧 Start: T2 Techtree</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⚒️ Crafting: 25% Faster than P1</span>
-      <span class="badge">⛏️ Quarries: 2 Pumpjacks, 3 Quarries, 1 Woods Quarry</span>
-      <span class="badge">🛢️ Oil Refineries: 4 Total</span>
-      <span class="badge">🔥 Furnaces: +2</span>
-      <span class="badge">🌱 Planters: 11</span>
-      <span class="badge">🪵 Place Entities: 1500</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +30%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">24 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">120 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">2x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔧</span>
+            <span class="stat-label">Workbench Access</span>
+            <span class="stat-value">T2</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⚒️</span>
+            <span class="stat-label">Crafting Speed</span>
+            <span class="stat-value">50% Faster</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⛏️</span>
+            <span class="stat-label">Quarries</span>
+            <span class="stat-value">2 Pump, 3 Quarry, 1 Wood</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🛢️</span>
+            <span class="stat-label">Oil Refineries</span>
+            <span class="stat-value">4</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔥</span>
+            <span class="stat-label">Furnaces</span>
+            <span class="stat-value">10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌱</span>
+            <span class="stat-label">Planters</span>
+            <span class="stat-value">11</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🪵</span>
+            <span class="stat-label">Place Entities</span>
+            <span class="stat-value">1500</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+30%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 3 -->
   <div class="prestige-card">
     <h3>Prestige 3</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 30 Slots</span>
-      <span class="badge">❤️ Health: 130 HP</span>
-      <span class="badge">⚡ TC Upgrade: 3x Faster</span>
-      <span class="badge">🔧 Start: T3 Techtree</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⚒️ Crafting: Instant</span>
-      <span class="badge">⛏️ Quarries: 2 Pumpjacks, 3 Quarries, 2 Woods Quarry</span>
-      <span class="badge">🛢️ Oil Refineries: 10</span>
-      <span class="badge">🔥 Furnaces: +2</span>
-      <span class="badge">🌱 Planters: 12</span>
-      <span class="badge">🪵 Place Entities: 1800</span>
-    </div>
-    <div class="group">
-      <h4>Movement</h4>
-      <span class="badge">🏃 Run: 1.5x faster (/togglerun)</span>
-      <span class="badge">🏊 Swim: 1.5x faster (/toggleswim)</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +40%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">30 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">130 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">3x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔧</span>
+            <span class="stat-label">Workbench Access</span>
+            <span class="stat-value">T3</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⚒️</span>
+            <span class="stat-label">Crafting Speed</span>
+            <span class="stat-value">Instant</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⛏️</span>
+            <span class="stat-label">Quarries</span>
+            <span class="stat-value">2 Pump, 3 Quarry, 2 Wood</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🛢️</span>
+            <span class="stat-label">Oil Refineries</span>
+            <span class="stat-value">10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🔥</span>
+            <span class="stat-label">Furnaces</span>
+            <span class="stat-value">12</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌱</span>
+            <span class="stat-label">Planters</span>
+            <span class="stat-value">12</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🪵</span>
+            <span class="stat-label">Place Entities</span>
+            <span class="stat-value">1800</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Movement</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🏃</span>
+            <span class="stat-label">Run Speed</span>
+            <span class="stat-value">1.5x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏊</span>
+            <span class="stat-label">Swim Speed</span>
+            <span class="stat-value">1.5x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+40%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 4 -->
   <div class="prestige-card">
     <h3>Prestige 4</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 36 Slots</span>
-      <span class="badge">❤️ Health: 140 HP</span>
-      <span class="badge">⚡ TC Upgrade: 4x Faster</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⚒️ Crafting: Instant</span>
-      <span class="badge">⛏️ Quarries: 3 Pumpjacks, 4 Quarries, 2 Woods Quarry</span>
-    </div>
-    <div class="group">
-      <h4>Movement</h4>
-      <span class="badge">🏃 Run: 2x faster</span>
-      <span class="badge">🏊 Swim: 2x faster</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +50%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">36 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">140 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">4x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⛏️</span>
+            <span class="stat-label">Quarries</span>
+            <span class="stat-value">3 Pump, 4 Quarry, 2 Wood</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Movement</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🏃</span>
+            <span class="stat-label">Run Speed</span>
+            <span class="stat-value">2x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏊</span>
+            <span class="stat-label">Swim Speed</span>
+            <span class="stat-value">2x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+50%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 5 -->
   <div class="prestige-card">
     <h3>Prestige 5</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 42 Slots</span>
-      <span class="badge">❤️ Health: 150 HP</span>
-      <span class="badge">⚡ TC Upgrade: 5x Faster</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⚒️ Crafting: Instant - Mad</span>
-      <span class="badge">⛏️ Quarries: 3 Pumpjacks, 4 Quarries, 3 Woods Quarry</span>
-    </div>
-    <div class="group">
-      <h4>Movement</h4>
-      <span class="badge">🏃 Run: 3x faster</span>
-      <span class="badge">🏊 Swim: 3x faster</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +60%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">42 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">150 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">5x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⚒️</span>
+            <span class="stat-label">Crafting Speed</span>
+            <span class="stat-value">Instant - Mad</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⛏️</span>
+            <span class="stat-label">Quarries</span>
+            <span class="stat-value">3 Pump, 4 Quarry, 3 Wood</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Movement</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🏃</span>
+            <span class="stat-label">Run Speed</span>
+            <span class="stat-value">3x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏊</span>
+            <span class="stat-label">Swim Speed</span>
+            <span class="stat-value">3x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+60%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 6 -->
   <div class="prestige-card">
     <h3>Prestige 6</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 48 Slots</span>
-      <span class="badge">❤️ Health: 160 HP</span>
-      <span class="badge">⚡ TC Upgrade: 5x Faster</span>
-    </div>
-    <div class="group">
-      <h4>Movement</h4>
-      <span class="badge">🏃 Run: 4x faster</span>
-      <span class="badge">🏊 Swim: 4x faster</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +70%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">48 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">160 HP</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-label">TC Upgrade</span>
+            <span class="stat-value">5x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Movement</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🏃</span>
+            <span class="stat-label">Run Speed</span>
+            <span class="stat-value">4x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏊</span>
+            <span class="stat-label">Swim Speed</span>
+            <span class="stat-value">4x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+70%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 7 -->
   <div class="prestige-card">
     <h3>Prestige 7</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 96 Slots</span>
-      <span class="badge">❤️ Health: 170 HP</span>
-    </div>
-    <div class="group">
-      <h4>Movement</h4>
-      <span class="badge">🏃 Run: 5x faster</span>
-      <span class="badge">🏊 Swim: 5x faster</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🌙 Rested EXP: +80%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">96 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">170 HP</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Movement</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🏃</span>
+            <span class="stat-label">Run Speed</span>
+            <span class="stat-value">5x</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏊</span>
+            <span class="stat-label">Swim Speed</span>
+            <span class="stat-value">5x</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+80%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 8 -->
   <div class="prestige-card">
     <h3>Prestige 8</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">❤️ Health: 180 HP</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🛒 Shop Discount: 2.5%</span>
-      <span class="badge">🌙 Rested EXP: +90%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">❤️</span>
+            <span class="stat-label">Health</span>
+            <span class="stat-value">180 HP</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🛒</span>
+            <span class="stat-label">Shop Discount</span>
+            <span class="stat-value">2.5%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+90%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 9 -->
   <div class="prestige-card">
     <h3>Prestige 9</h3>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🛒 Shop Discount: 5%</span>
-      <span class="badge">🌙 Rested EXP: +100%</span>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🛒</span>
+            <span class="stat-label">Shop Discount</span>
+            <span class="stat-value">5%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Rested XP</span>
+            <span class="stat-value">+100%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Prestige 10 -->
-  <div class="prestige-card">
-    <h3>Prestige 10</h3>
-    <div class="group">
-      <h4>Core Stats</h4>
-      <span class="badge">🎒 Backpack: 144 Slots</span>
-      <span class="badge">❤️ Health: Max</span>
-      <span class="badge">🪵 Place Entities: 2000</span>
-    </div>
-    <div class="group">
-      <h4>Crafting & Resources</h4>
-      <span class="badge">⛏️ Quarries: 4 Pumpjacks, 5 Quarries, 4 Woods Quarry</span>
-      <span class="badge">🛢️ Oil Refineries: All</span>
-      <span class="badge">🌱 Planters: 15</span>
-      <span class="badge">🔓 Unlock: Laginator & Quest</span>
-      <span class="badge">📦 Stack Large Boxes: 5</span>
-    </div>
-    <div class="group">
-      <h4>Bonuses</h4>
-      <span class="badge">🛒 Shop Discount: 10%</span>
+  <div class="prestige-card prestige-max">
+    <h3>Prestige 10 ⭐</h3>
+    <div class="prestige-card-content">
+      <div class="group">
+        <h4>Core Stats</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🎒</span>
+            <span class="stat-label">Backpack</span>
+            <span class="stat-value">144 Slots</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🪵</span>
+            <span class="stat-label">Place Entities</span>
+            <span class="stat-value">2000</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Crafting & Resources</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">⛏️</span>
+            <span class="stat-label">Quarries</span>
+            <span class="stat-value">4 Pump, 5 Quarry, 4 Wood</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🛢️</span>
+            <span class="stat-label">Oil Refineries</span>
+            <span class="stat-value">All</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🌱</span>
+            <span class="stat-label">Planters</span>
+            <span class="stat-value">15</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">📦</span>
+            <span class="stat-label">Stack Large Boxes</span>
+            <span class="stat-value">5</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Special Unlocks</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🔓</span>
+            <span class="stat-label">Laginator Quest</span>
+            <span class="stat-value">Unlocked</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group">
+        <h4>Bonuses</h4>
+        <div class="stat-list">
+          <div class="stat-item">
+            <span class="stat-icon">🛒</span>
+            <span class="stat-label">Shop Discount</span>
+            <span class="stat-value">10%</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -1,3 +1,4 @@
+// CommandsList.jsx - Updated styling
 // src/components/CommandsList.jsx
 import React, { useState } from 'react';
 
@@ -14,7 +15,7 @@ const CommandsList = () => {
     ],
     'Home Teleports': [
       { cmd: '/home add (name)', desc: 'Adds a home spawn point (Only while on a foundation)' },
-      { cmd: '/home remove "name"', desc: 'Removes a home' },
+      { cmd: '/home remove (name)', desc: 'Removes a home' },
       { cmd: '/home list', desc: 'Shows a list of your homes/names' },
       { cmd: '/home help', desc: 'Gives more information' }
     ],
@@ -113,42 +114,42 @@ const CommandsList = () => {
 
   return (
     <div>
-      <h2 style={{ marginBottom: '1.5rem', color: '#d4d4d4' }}>Commands List</h2>
-
       <input
         type="text"
-        placeholder="Search commands..."
+        placeholder="🔍 Search commands..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         style={{
           width: '100%',
-          padding: '0.75rem 1rem',
+          padding: '1rem 1.25rem',
           background: 'rgba(20, 20, 20, 0.4)',
           border: '1px solid rgba(80, 80, 80, 0.3)',
-          borderRadius: '6px',
+          borderRadius: '10px',
           color: '#d4d4d4',
-          fontSize: '0.95rem',
+          fontSize: '1rem',
           outline: 'none',
-          marginBottom: '2rem'
+          marginBottom: '2rem',
+          transition: 'border-color 0.2s ease'
         }}
+        onFocus={(e) => e.target.style.borderColor = 'rgba(251, 211, 128, 0.4)'}
+        onBlur={(e) => e.target.style.borderColor = 'rgba(80, 80, 80, 0.3)'}
       />
 
       {Object.entries(filteredCommands).length > 0 ? (
         Object.entries(filteredCommands).map(([category, cmds]) => (
           <div key={category} style={{ marginBottom: '2.5rem' }}>
             <h3 style={{ 
-              color: '#a0a0a0', 
-              fontSize: '0.9rem',
-              fontWeight: 'normal',
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
+              color: '#ffd580', 
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              letterSpacing: '0.5px',
               marginBottom: '1rem',
-              paddingBottom: '0.5rem',
-              borderBottom: '1px solid rgba(80, 80, 80, 0.2)'
+              paddingBottom: '0.75rem',
+              borderBottom: '1px solid rgba(251, 211, 128, 0.2)'
             }}>
               {category}
             </h3>
-            <div style={{ display: 'grid', gap: '0.5rem' }}>
+            <div style={{ display: 'grid', gap: '0.75rem' }}>
               {cmds.map((command, idx) => {
                 const cmdKey = `${category}-${idx}`;
                 const isCopied = copiedCmd === cmdKey;
@@ -158,37 +159,37 @@ const CommandsList = () => {
                     key={idx}
                     onClick={() => copyToClipboard(command.cmd.split(' ')[0], cmdKey)}
                     style={{
-                      padding: '0.75rem 0.5rem',
-                      background: 'rgba(20, 20, 20, 0.3)',
-                      border: '1px solid rgba(80, 80, 80, 0.2)',
-                      borderRadius: '4px',
+                      padding: '1rem',
+                      background: 'rgba(20, 20, 20, 0.4)',
+                      border: '1px solid rgba(80, 80, 80, 0.3)',
+                      borderRadius: '8px',
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
                       position: 'relative'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(30, 30, 30, 0.5)';
+                      e.currentTarget.style.background = 'rgba(251, 211, 128, 0.08)';
                       e.currentTarget.style.borderColor = 'rgba(251, 211, 128, 0.3)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(20, 20, 20, 0.3)';
-                      e.currentTarget.style.borderColor = 'rgba(80, 80, 80, 0.2)';
+                      e.currentTarget.style.background = 'rgba(20, 20, 20, 0.4)';
+                      e.currentTarget.style.borderColor = 'rgba(80, 80, 80, 0.3)';
                     }}>
-                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
                       <code style={{
-                        color: '#fbd380',
-                        fontSize: '0.9rem',
-                        fontWeight: '500',
-                        minWidth: '180px',
+                        color: '#ffd580',
+                        fontSize: '0.95rem',
+                        fontWeight: '600',
+                        minWidth: '200px',
                         flexShrink: 0,
                         paddingLeft: '0.5rem'
                       }}>
                         {command.cmd}
                       </code>
                       <span style={{ 
-                        color: '#a0a0a0', 
-                        fontSize: '0.9rem',
-                        lineHeight: '1.4',
+                        color: '#d4d4d4', 
+                        fontSize: '0.95rem',
+                        lineHeight: '1.5',
                         flex: 1
                       }}>
                         {command.desc}
@@ -196,8 +197,8 @@ const CommandsList = () => {
                       {isCopied && (
                         <span style={{
                           color: '#4CAF50',
-                          fontSize: '0.85rem',
-                          fontWeight: '500',
+                          fontSize: '0.9rem',
+                          fontWeight: '600',
                           marginLeft: 'auto',
                           animation: 'fadeIn 0.2s ease'
                         }}>
@@ -214,24 +215,28 @@ const CommandsList = () => {
       ) : (
         <div style={{
           textAlign: 'center',
-          padding: '2rem',
-          color: '#808080'
+          padding: '3rem',
+          color: '#808080',
+          background: 'rgba(20, 20, 20, 0.4)',
+          borderRadius: '10px',
+          border: '1px solid rgba(80, 80, 80, 0.3)'
         }}>
-          No commands found
+          No commands found matching "{searchTerm}"
         </div>
       )}
 
       <div style={{
         marginTop: '2rem',
-        padding: '1rem',
-        background: 'rgba(20, 20, 20, 0.3)',
-        border: '1px solid rgba(80, 80, 80, 0.2)',
-        borderRadius: '6px',
-        fontSize: '0.9rem',
-        color: '#a0a0a0',
-        textAlign: 'center'
+        padding: '1.25rem',
+        background: 'linear-gradient(135deg, rgba(251, 211, 128, 0.08), rgba(20, 20, 20, 0.4))',
+        border: '1px solid rgba(251, 211, 128, 0.3)',
+        borderRadius: '10px',
+        fontSize: '0.95rem',
+        color: '#d4d4d4',
+        textAlign: 'center',
+        lineHeight: '1.6'
       }}>
-        Click any command to copy it. Missing a command? Add it in the "Commands Megathread".
+        💡 Click any command to copy it to your clipboard. Missing a command? Add it in the "Commands Megathread".
       </div>
 
       <style>{`

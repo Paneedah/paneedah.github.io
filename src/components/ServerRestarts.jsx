@@ -1,9 +1,10 @@
+// ServerRestarts.jsx - Already good, just minor emoji updates
 // src/components/ServerRestarts.jsx
 import React, { useState, useEffect } from 'react';
 
 const ServerRestarts = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [selectedRegion, setSelectedRegion] = useState('EU');
+  const [selectedRegion, setSelectedRegion] = useState('US');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,58 +15,51 @@ const ServerRestarts = () => {
 
   const servers = {
     EU: [
-      { name: 'EU-W1', restartTime: '17:00' },
-      { name: 'EU-W2', restartTime: '18:00' },
-      { name: 'EU-W3', restartTime: '19:00' },
-      { name: 'EU-W4', restartTime: '21:00' },
-      { name: 'EU-W5', restartTime: '22:00' },
-      { name: 'EU-W6', restartTime: '00:00' },
-      { name: 'EU-R1', restartTime: '20:00' },
-      { name: 'EU-R2', restartTime: '23:00' },
-      { name: 'EU-R3', restartTime: '01:00' },
-      { name: 'EU-H1', restartTime: '02:00' },
-      { name: 'EU-W7', restartTime: '03:00' },
-      { name: 'EU-W8', restartTime: '04:00' },
-      { name: 'EU-W9', restartTime: '05:00' }
+      { name: 'EU-W1', restartTime: 1759791600 },
+      { name: 'EU-W2', restartTime: 1759708800 },
+      { name: 'EU-W3', restartTime: 1759712400 },
+      { name: 'EU-W4', restartTime: 1759719600 },
+      { name: 'EU-W5', restartTime: 1759723200 },
+      { name: 'EU-W6', restartTime: 1759730400 },
+      { name: 'EU-W7', restartTime: 1759741200 },
+      { name: 'EU-W8', restartTime: 1759744800 },
+      { name: 'EU-W9', restartTime: 1759748400 },
+      { name: 'EU-R1', restartTime: 1759716000 },
+      { name: 'EU-R2', restartTime: 1759726800 },
+      { name: 'EU-R3', restartTime: 1759734000 },
+      { name: 'EU-H1', restartTime: 1759737600 }
     ],
     US: [
-      { name: 'US-W1', restartTime: '00:00' },
-      { name: 'US-W2', restartTime: '01:00' },
-      { name: 'US-W3', restartTime: '02:00' },
-      { name: 'US-W4', restartTime: '04:00' },
-      { name: 'US-W5', restartTime: '05:00' },
-      { name: 'US-W6', restartTime: '07:00' },
-      { name: 'US-R1', restartTime: '03:00' },
-      { name: 'US-R2', restartTime: '06:00' },
-      { name: 'US-R3', restartTime: '08:00' },
-      { name: 'US-H1', restartTime: '09:00' },
-      { name: 'US-W7', restartTime: '10:00' },
-      { name: 'US-W8', restartTime: '11:00' },
-      { name: 'US-W9', restartTime: '12:00' }
+      { name: 'US-W1', restartTime: 1759730400 },
+      { name: 'US-W2', restartTime: 1759734000 },
+      { name: 'US-W3', restartTime: 1759737600 },
+      { name: 'US-W4', restartTime: 1759744800 },
+      { name: 'US-W5', restartTime: 1759748400 },
+      { name: 'US-W6', restartTime: 1759755600 },
+      { name: 'US-W7', restartTime: 1759766400 },
+      { name: 'US-W8', restartTime: 1759770000 },
+      { name: 'US-W9', restartTime: 1759773600 },
+      { name: 'US-R1', restartTime: 1759741200 },
+      { name: 'US-R2', restartTime: 1759752000 },
+      { name: 'US-R3', restartTime: 1759759200 },
+      { name: 'US-H1', restartTime: 1759762800 }
     ]
   };
 
-  const getNextRestartTime = (timeString) => {
-    const [hours, minutes] = timeString.split(':').map(Number);
+  const getNextRestartTime = (timestamp) => {
+    const originalDate = new Date(timestamp * 1000);
+    const hours = originalDate.getHours();
+    const minutes = originalDate.getMinutes();
     
-    const today = new Date();
-    const restartToday = new Date(
-      `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`
-    );
+    const now = new Date();
+    const todayRestart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0, 0);
     
-    const mstTimeStr = restartToday.toLocaleString('en-US', { timeZone: 'America/Denver' });
-    const localTimeStr = restartToday.toLocaleString('en-US');
-    const mstDate = new Date(mstTimeStr);
-    const localDate = new Date(localTimeStr);
-    const offset = localDate - mstDate;
-    const restartLocal = new Date(restartToday.getTime() - offset);
-    
-    const fiveMinutesAfter = new Date(restartLocal.getTime() + 5 * 60 * 1000);
-    if (fiveMinutesAfter <= currentTime) {
-      restartLocal.setDate(restartLocal.getDate() + 1);
+    const fiveMinutesAfter = new Date(todayRestart.getTime() + 5 * 60 * 1000);
+    if (fiveMinutesAfter <= now) {
+      todayRestart.setDate(todayRestart.getDate() + 1);
     }
     
-    return restartLocal;
+    return todayRestart;
   };
 
   const formatRestartTime = (restartDate) => {
@@ -154,42 +148,54 @@ const ServerRestarts = () => {
     );
   };
 
+  const worldServers = servers[selectedRegion]
+    .filter(s => s.name.includes('-W'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  
+  const raidHubServers = servers[selectedRegion]
+    .filter(s => s.name.includes('-R') || s.name.includes('-H'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <div>
       <div style={{ 
         background: 'rgba(20, 20, 20, 0.4)',
-        borderRadius: '8px',
+        borderRadius: '12px',
         padding: '1.5rem',
         marginBottom: '2rem',
         border: '1px solid rgba(80, 80, 80, 0.3)',
         textAlign: 'center'
       }}>
-        <h3 style={{ color: '#ffd580', marginBottom: '1rem' }}>🌐 Connection IPs</h3>
-        <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <h3 style={{ color: '#ffd580', marginBottom: '1rem', fontSize: '1.2rem' }}>🌐 Connection IPs</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
           <div>
-            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>Europe</div>
+            <div style={{ fontSize: '0.9rem', color: '#a0a0a0', marginBottom: '0.5rem' }}>Europe</div>
             <code style={{ 
               background: 'rgba(251, 211, 128, 0.15)', 
-              padding: '0.5rem 1rem', 
-              borderRadius: '6px',
-              fontSize: '1.1rem',
+              padding: '1rem', 
+              borderRadius: '8px',
+              fontSize: '1rem',
               color: '#ffd580',
-              display: 'inline-block'
+              display: 'block',
+              border: '1px solid rgba(251, 211, 128, 0.3)',
+              fontWeight: '500'
             }}>
-              worlds.eu.britspve.com
+              connect worlds.eu.britspve.com
             </code>
           </div>
           <div>
-            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>United States</div>
+            <div style={{ fontSize: '0.9rem', color: '#a0a0a0', marginBottom: '0.5rem' }}>United States</div>
             <code style={{ 
               background: 'rgba(251, 211, 128, 0.15)', 
-              padding: '0.5rem 1rem', 
-              borderRadius: '6px',
-              fontSize: '1.1rem',
+              padding: '1rem', 
+              borderRadius: '8px',
+              fontSize: '1rem',
               color: '#ffd580',
-              display: 'inline-block'
+              display: 'block',
+              border: '1px solid rgba(251, 211, 128, 0.3)',
+              fontWeight: '500'
             }}>
-              worlds.us.britspve.com
+              connect worlds.us.britspve.com
             </code>
           </div>
         </div>
@@ -198,11 +204,12 @@ const ServerRestarts = () => {
       <div style={{
         background: 'rgba(20, 20, 20, 0.4)',
         border: '1px solid rgba(80, 80, 80, 0.3)',
-        borderRadius: '8px',
+        borderRadius: '12px',
         padding: '1rem',
         marginBottom: '2rem',
         textAlign: 'center',
-        color: '#d4d4d4'
+        color: '#d4d4d4',
+        lineHeight: '1.6'
       }}>
         ⏰ All servers are given <strong style={{ color: '#ffd580' }}>1 hour notice</strong> prior to restart times. Times shown in your local timezone.
       </div>
@@ -220,7 +227,7 @@ const ServerRestarts = () => {
             border: selectedRegion === 'EU' ? '1px solid rgba(251, 211, 128, 0.4)' : '1px solid rgba(80, 80, 80, 0.3)',
             color: selectedRegion === 'EU' ? '#ffd580' : '#d4d4d4',
             padding: '1rem 2rem',
-            borderRadius: '8px',
+            borderRadius: '10px',
             fontSize: '1.1rem',
             fontWeight: 'bold',
             cursor: 'pointer',
@@ -236,7 +243,7 @@ const ServerRestarts = () => {
             border: selectedRegion === 'US' ? '1px solid rgba(251, 211, 128, 0.4)' : '1px solid rgba(80, 80, 80, 0.3)',
             color: selectedRegion === 'US' ? '#ffd580' : '#d4d4d4',
             padding: '1rem 2rem',
-            borderRadius: '8px',
+            borderRadius: '10px',
             fontSize: '1.1rem',
             fontWeight: 'bold',
             cursor: 'pointer',
@@ -247,14 +254,27 @@ const ServerRestarts = () => {
         </button>
       </div>
 
-      <div>
-        <h3 style={{ color: '#ffd580', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          {selectedRegion === 'EU' ? 'EU Servers' : 'US Servers'}
-        </h3>
-        <div style={{ display: 'grid', gap: '0.75rem' }}>
-          {servers[selectedRegion].map(server => (
-            <ServerCard key={server.name} server={server} />
-          ))}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
+        <div>
+          <h3 style={{ color: '#ffd580', marginBottom: '1rem', fontSize: '1.1rem' }}>
+            🌍 World Servers
+          </h3>
+          <div style={{ display: 'grid', gap: '0.75rem' }}>
+            {worldServers.map(server => (
+              <ServerCard key={server.name} server={server} />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 style={{ color: '#ffd580', marginBottom: '1rem', fontSize: '1.1rem' }}>
+            ⚔️ Raid & Hub Servers
+          </h3>
+          <div style={{ display: 'grid', gap: '0.75rem' }}>
+            {raidHubServers.map(server => (
+              <ServerCard key={server.name} server={server} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

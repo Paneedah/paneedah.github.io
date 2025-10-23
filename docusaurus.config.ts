@@ -81,10 +81,10 @@ const config: Config = {
         },
         {to: '/blog', label: 'Updates', position: 'left'},
         {
-          href: 'https://discord.gg/britrust',
-          label: 'Discord',
-          position: 'right',
-        },
+        type: 'html',
+        position: 'right',
+        value: '<a href="https://discord.gg/britrust" target="_blank" rel="noopener noreferrer"><img src="/img/Discord-logo.png" alt="Join our Discord" style="height: 40px; border-radius: 8px; vertical-align: middle;" /></a>',
+      },
       ],
     },
     docs: {

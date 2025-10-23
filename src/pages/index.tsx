@@ -1,3 +1,4 @@
+// index.tsx
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -13,25 +14,33 @@ function usePlayerCount(query: string) {
 
   useEffect(() => {
     async function fetchCount() {
-      const res = await fetch(
-        `https://api.battlemetrics.com/servers?filter[game]=rust&filter[search]=${encodeURIComponent(query)}`
-      );
-      const data = await res.json();
-      const server = data.data[0]?.attributes;
-      if (server) {
-        setCount(server.players);
-        setMax(server.maxPlayers);
+      try {
+        const res = await fetch(
+          `https://api.battlemetrics.com/servers?filter[game]=rust&filter[search]=${encodeURIComponent(query)}`
+        );
+        const data = await res.json();
+        const server = data.data[0]?.attributes;
+        if (server) {
+          setCount(server.players);
+          setMax(server.maxPlayers);
+        }
+      } catch (error) {
+        console.error('Failed to fetch player count:', error);
       }
     }
     fetchCount();
+    const interval = setInterval(fetchCount, 60000);
+    return () => clearInterval(interval);
   }, [query]);
 
   return { count, max };
 }
 
 function HomepageHeader() {
-  const us = usePlayerCount('worlds.us.britspve.com'); // This needs fixing, I don't think BM supports our multi-server setup in this context.
-  const eu = usePlayerCount('worlds.eu.britspve.com'); // This needs fixing, I don't think BM supports our multi-server setup in this context.
+  const us = usePlayerCount('worlds.us.britspve.com');
+  const eu = usePlayerCount('worlds.eu.britspve.com');
+
+  const totalPlayers = (us.count || 0) + (eu.count || 0);
 
   return (
     <header className={clsx('hero', styles.heroBanner)}>
@@ -39,28 +48,64 @@ function HomepageHeader() {
         <div className={styles.mainPanel}>
           <div className={styles.panelHeader}>
             <h1>britRust Worlds</h1>
-            <span className={styles.badge}>PvE</span>
+            <span className={styles.badge}>PvE ⚡</span>
           </div>
           
           <div className={styles.serverList}>
             <div className={styles.serverRow}>
               <span className={styles.region}>🇺🇸</span>
               <code className={styles.ip}>worlds.us.britspve.com</code>
-              <span className={styles.players}>{us.count ?? '...'} / {us.max ?? '...'}</span>
+              <span className={styles.players}>
+                {us.count ?? '...'} / {us.max ?? '...'}
+                {us.count !== null && ' 🟢'}
+              </span>
             </div>
             <div className={styles.serverRow}>
               <span className={styles.region}>🇪🇺</span>
               <code className={styles.ip}>worlds.eu.britspve.com</code>
-              <span className={styles.players}>{eu.count ?? '...'} / {eu.max ?? '...'}</span>
+              <span className={styles.players}>
+                {eu.count ?? '...'} / {eu.max ?? '...'}
+                {eu.count !== null && ' 🟢'}
+              </span>
             </div>
           </div>
           
-          <div className={styles.wipeInfo}>Next wipe in 0 days</div>
-          
-          <div className={styles.actions}>
-            <Link to="/docs/server-info/intro">Get Started</Link>
-            <Link to="/docs/server-info/connection">Server Info</Link>
+          {/* Stats */}
+          <div className={styles.statsGrid}>
+            <div className={styles.statItem}>
+              <span className={styles.statIcon}>👥</span>
+              <span className={styles.statValue}>{totalPlayers > 0 ? totalPlayers : '...'}</span>
+              <span className={styles.statLabel}>Online</span>
+            </div>
+            <div className={styles.statItem}>
+              <span className={styles.statIcon}>⏰</span>
+              <span className={styles.statValue}>0d</span>
+              <span className={styles.statLabel}>Next Wipe</span>
+            </div>
+            <a href="https://store.britspve.com" target="_blank" rel="noopener noreferrer" className={styles.statItem}>
+              <span className={styles.statIcon}>🛒</span>
+              <span className={styles.statValue}>VIP</span>
+              <span className={styles.statLabel}>Store</span>
+            </a>
           </div>
+          
+          {/* Actions */}
+          <div className={styles.actionGrid}>
+            <Link to="/docs/server-info/intro" className={`${styles.actionCard} ${styles.actionPrimary}`}>
+              <span className={styles.actionIcon}>🚀</span>
+              <span className={styles.actionTitle}>Get Started</span>
+            </Link>
+            <Link to="/docs/server-info/connection" className={`${styles.actionCard} ${styles.actionSecondary}`}>
+              <span className={styles.actionIcon}>📡</span>
+              <span className={styles.actionTitle}>Server Info</span>
+            </Link>
+          </div>
+
+          {/* Discord */}
+          <a href="https://discord.gg/britspve" target="_blank" rel="noopener noreferrer" className={styles.discordButton}>
+            <span className={styles.discordIcon}>💬</span>
+            Join Our Discord
+          </a>
         </div>
       </div>
     </header>
@@ -78,20 +123,20 @@ type QuickAccessItem = {
 const QuickAccessItems: QuickAccessItem[] = [
   {
     title: 'Progression System',
-    icon: '📈',
-    description: 'Learn about prestige perks and leveling',
+    icon: '⭐',
+    description: 'Prestige perks, skill trees, and leveling rewards',
     link: '/docs/progression/passive-perks',
   },
   {
     title: 'PvE Content',
     icon: '⚔️',
-    description: 'Bosses, dungeons, and raid information',
+    description: 'Epic bosses, challenging dungeons, and raidable bases',
     link: '/docs/bosses/patrol-helicopter',
   },
   {
-    title: 'Server Features',
-    icon: '⚡',
-    description: 'Explore custom features and mechanics',
+    title: 'Custom Features',
+    icon: '🎨',
+    description: 'Unique gameplay mechanics and quality-of-life improvements',
     link: '/docs/features/farming',
   },
 ];
