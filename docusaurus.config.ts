@@ -56,8 +56,15 @@ const config: Config = {
     image: 'img/britrust-social-card.jpg',
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: false,
+      disableSwitch: true,
       respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'support_us',
+      content: '<b>This wiki is NOT an official part of britRust, and this is heavily in-development. Join our <a href="https://discord.gg/britrust" target="_blank" rel="noopener noreferrer">Discord</a> to stay updated!</b>',
+      backgroundColor: '#ff6f64ff',
+      textColor: '#2e2e2eff',
+      isCloseable: false,
     },
     navbar: {
       title: 'BritRust',
