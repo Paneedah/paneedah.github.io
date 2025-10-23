@@ -31,7 +31,7 @@ import '@site/src/css/prestige.css';
       <li>Lvl 6: 1,305 XP</li>
       <li>Lvl 7: 1,736 XP</li>
       <li>Lvl 8: 2,229 XP</li>
-      <li>Lvl 90: 2,784 XP</li>
+      <li>Lvl 9: 2,784 XP</li>
       <li>Lvl 10: 3,401 XP</li>
     </ul>
   </div>
