@@ -1,0 +1,200 @@
+/* halloween.css */
+.halloween-hero {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(20, 20, 20, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 117, 24, 0.3);
+  margin-bottom: 2rem;
+}
+
+.halloween-title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #ff7518;
+  text-shadow: 0 0 20px rgba(255, 117, 24, 0.5);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.halloween-warning {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #ffb347;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.halloween-line {
+  height: 2px;
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, #ff7518, transparent);
+  border-radius: 2px;
+}
+
+.halloween-container {
+  background: rgba(20, 20, 20, 0.4);
+  color: #f8f4ec;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(80, 80, 80, 0.3);
+}
+
+.halloween-intro {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffa94d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.halloween-container > p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #e8e8e8;
+  margin-bottom: 1.5rem;
+}
+
+.halloween-container > p strong {
+  color: #ff7518;
+  font-weight: 700;
+}
+
+/* Keep the middle section perfect */
+.spooky-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 117, 24, 0.3);
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 20px rgba(255, 80, 0, 0.1),
+    inset 0 1px 0 rgba(255, 117, 24, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.spooky-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff7518, transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.spooky-section h2 {
+  color: #ff7518;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(255, 117, 24, 0.5);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.spooky-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.spooky-item {
+  padding: 1.5rem;
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 117, 24, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.spooky-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 117, 24, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 117, 24, 0.2);
+  background: rgba(40, 40, 40, 0.6);
+}
+
+.spooky-item h3 {
+  color: #ffa94d;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 8px rgba(255, 117, 24, 0.4);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spooky-item p {
+  color: #d8d8d8;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Simplified bottom outro */
+.spooky-outro {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 117, 24, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 117, 24, 0.2);
+}
+
+.spooky-outro-text {
+  color: #e8e8e8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.spooky-outro-text:last-child {
+  font-size: 1.15rem;
+  color: #ff7518;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 117, 24, 0.5), transparent);
+  margin: 2.5rem 0;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .halloween-hero {
+    padding: 2rem 1.5rem;
+  }
+  
+  .halloween-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .spooky-section {
+    padding: 1.5rem;
+  }
+  
+  .spooky-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,3 +1,24 @@
+brit:
+  name: Brit
+  title: Owner @ britRust
+  image_url: https://cdn.discordapp.com/avatars/117651595683954692/51578cc80859cad1c20c4986a1f99c4c.png
+  # socials:
+  #   github: paneedah
+
+mad:
+  name: Mad
+  title: Manager @ britRust
+  image_url: https://cdn.discordapp.com/avatars/239300800902332427/45bd23ebe375958fab52d0453d201405.png
+  # socials:
+  #   github: paneedah
+
+crying:
+  name: Crying
+  title: Lead Developer @ britRust
+  image_url: https://cdn.discordapp.com/avatars/247956085435006977/639e6b3a4c617ca758cdf4ccb758d5a3.png
+  # socials:
+  #   github: paneedah
+
 paneedah:
   name: Paneedah
   title: Developer @ britRust
