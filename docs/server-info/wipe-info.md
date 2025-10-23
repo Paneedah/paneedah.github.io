@@ -1,4 +1,6 @@
-# Wipe Information
+import WipeSchedule from '@site/src/components/WipeSchedule';
+import '@site/src/components/prestige.css';
 
-TODO.
+# Wipe Schedule
 
+<WipeSchedule />

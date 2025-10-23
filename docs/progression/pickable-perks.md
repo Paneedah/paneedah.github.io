@@ -3,7 +3,7 @@ import '@site/src/components/prestige.css';
 # Pickable Prestige Perks
 
 <div class="prestige-notes">
-  <h3>⚠️ Important Notice</h3>
+  <h3>⚠️ Important Notes</h3>
   <ul>
     <li>Once you pick a perk, you cannot change or undo it.  </li>
     <li>You keep your perks when you prestige again and can pick **another one**.</li>
