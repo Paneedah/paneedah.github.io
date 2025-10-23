@@ -92,7 +92,7 @@ const QuickAccessItems: QuickAccessItem[] = [
     title: 'Server Features',
     icon: '⚡',
     description: 'Explore custom features and mechanics',
-    link: '/docs/features/cooking',
+    link: '/docs/features/farming',
   },
 ];
 
