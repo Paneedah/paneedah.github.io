@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkbritrust_wiki=globalThis.webpackChunkbritrust_wiki||[]).push([[472],{5513:t=>{t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to BritRust","permalink":"/blog/welcome","unlisted":false,"date":"2025-10-22T00:00:00.000Z"}]}')}}]);

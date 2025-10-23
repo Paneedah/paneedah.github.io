@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbritrust_wiki=globalThis.webpackChunkbritrust_wiki||[]).push([[8146],{9328:t=>{t.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Latest updates, events, and announcements from BritRust","blogTitle":"Server Updates"}}')}}]);
