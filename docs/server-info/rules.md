@@ -1,4 +1,4 @@
-import '@site/src/components/prestige.css';
+import '@site/src/css/prestige.css';
 
 # Server Rules
 

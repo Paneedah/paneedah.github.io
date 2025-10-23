@@ -1,4 +1,3 @@
-// src/components/WipeSchedule.jsx
 import React, { useState, useEffect } from 'react';
 
 const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-06' }) => {
@@ -68,18 +67,17 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
   
   const TimeBox = ({ value, label }) => (
     <div style={{
-      background: 'linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.1))',
-      border: '2px solid rgba(255, 107, 53, 0.4)',
-      borderRadius: '12px',
+      background: 'rgba(251, 211, 128, 0.15)',
+      border: '1px solid rgba(80, 80, 80, 0.3)',
+      borderRadius: '8px',
       padding: '1rem',
       textAlign: 'center',
-      minWidth: '70px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)'
+      minWidth: '70px'
     }}>
       <div style={{
         fontSize: '2rem',
         fontWeight: 'bold',
-        color: '#ff6b35',
+        color: '#ffd580',
         lineHeight: '1',
         marginBottom: '0.25rem'
       }}>
@@ -87,7 +85,7 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
       </div>
       <div style={{
         fontSize: '0.75rem',
-        color: '#ffd580',
+        color: '#a0a0a0',
         textTransform: 'uppercase',
         letterSpacing: '0.5px'
       }}>
@@ -100,12 +98,11 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
     <div>
       {/* What's Wiping Box */}
       <div style={{ 
-        background: 'rgba(255, 107, 53, 0.15)',
-        borderRadius: '12px',
+        background: 'rgba(20, 20, 20, 0.4)',
+        borderRadius: '8px',
         padding: '1.5rem',
         marginBottom: '1.5rem',
-        border: '2px solid rgba(255, 107, 53, 0.4)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
+        border: '1px solid rgba(80, 80, 80, 0.3)'
       }}>
         <h3 style={{ color: '#ffd580', marginBottom: '1rem', textAlign: 'center' }}>
           🎯 What's Wiping on {formatDate(nextWipeDate)}?
@@ -118,33 +115,33 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
           marginBottom: '1rem'
         }}>
           <span style={{
-            background: 'rgba(255, 107, 53, 0.3)',
+            background: 'rgba(251, 211, 128, 0.15)',
             padding: '0.5rem 1rem',
-            borderRadius: '8px',
-            color: '#fff',
+            borderRadius: '6px',
+            color: '#ffd580',
             fontWeight: 'bold',
-            border: '1px solid rgba(255, 107, 53, 0.5)'
+            border: '1px solid rgba(80, 80, 80, 0.3)'
           }}>
             🌍 Map
           </span>
           <span style={{
-            background: 'rgba(255, 107, 53, 0.3)',
+            background: 'rgba(251, 211, 128, 0.15)',
             padding: '0.5rem 1rem',
-            borderRadius: '8px',
-            color: '#fff',
+            borderRadius: '6px',
+            color: '#ffd580',
             fontWeight: 'bold',
-            border: '1px solid rgba(255, 107, 53, 0.5)'
+            border: '1px solid rgba(80, 80, 80, 0.3)'
           }}>
             💰 RP
           </span>
           {isXpWipe() && (
             <span style={{
-              background: 'rgba(255, 215, 0, 0.3)',
+              background: 'rgba(255, 215, 0, 0.2)',
               padding: '0.5rem 1rem',
-              borderRadius: '8px',
-              color: '#fff',
+              borderRadius: '6px',
+              color: '#ffd700',
               fontWeight: 'bold',
-              border: '2px solid rgba(255, 215, 0, 0.6)',
+              border: '2px solid rgba(255, 215, 0, 0.4)',
               animation: 'pulse 2s infinite'
             }}>
               ⭐ XP (RARE!)
@@ -163,18 +160,17 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
       
       {/* Countdown Timer Box */}
       <div style={{ 
-        background: 'rgba(30, 32, 35, 0.85)',
-        borderRadius: '12px',
+        background: 'rgba(20, 20, 20, 0.4)',
+        borderRadius: '8px',
         padding: '1.5rem',
         marginBottom: '1.5rem',
-        border: '1px solid rgba(122, 128, 128, 0.3)',
-        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)'
+        border: '1px solid rgba(80, 80, 80, 0.3)'
       }}>
         <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <div style={{ fontSize: '1.1rem', color: '#ffd580', marginBottom: '0.25rem' }}>
             📅 {formatDate(nextWipeDate)}
           </div>
-          <div style={{ fontSize: '1.3rem', color: '#ff6b35', fontWeight: 'bold' }}>
+          <div style={{ fontSize: '1.3rem', color: '#ffd580', fontWeight: 'bold' }}>
             🕐 {formatTime(nextWipeDate)}
           </div>
         </div>
@@ -183,7 +179,7 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
           <div style={{
             textAlign: 'center',
             fontSize: '1.5rem',
-            color: '#ff6b35',
+            color: '#ffd580',
             fontWeight: 'bold',
             padding: '2rem'
           }}>
@@ -206,11 +202,10 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
       
       {/* General Schedule Info Box */}
       <div style={{ 
-        background: 'rgba(30, 32, 35, 0.85)',
-        borderRadius: '12px',
+        background: 'rgba(20, 20, 20, 0.4)',
+        borderRadius: '8px',
         padding: '1.5rem',
-        border: '1px solid rgba(122, 128, 128, 0.3)',
-        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)'
+        border: '1px solid rgba(80, 80, 80, 0.3)'
       }}>
         <h3 style={{ color: '#ffd580', marginBottom: '1rem' }}>📋 Wipe Schedule Info</h3>
         <ul style={{ fontSize: '0.95rem', color: '#d4d4d4' }}>

@@ -33,7 +33,6 @@ const sidebars: SidebarsConfig = {
         'bosses/bradley-apc',
         'pve-content/buyable-raids',
         'pve-content/dungeons',
-        'pve-content/virtual-quarry',
       ],
     },
     {
@@ -43,6 +42,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'features/farming',
         'features/cooking',
+        'features/virtual-quarry',
+        'features/quests',
       ],
     },
   ],
