@@ -96,6 +96,48 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
   
   return (
     <div>
+      {/* Countdown Timer Box */}
+      <div style={{ 
+        background: 'rgba(20, 20, 20, 0.4)',
+        borderRadius: '8px',
+        padding: '1.5rem',
+        marginBottom: '1.5rem',
+        border: '1px solid rgba(80, 80, 80, 0.3)'
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <div style={{ fontSize: '1.1rem', color: '#ffd580', marginBottom: '0.25rem' }}>
+            📅 {formatDate(nextWipeDate)}
+          </div>
+          <div style={{ fontSize: '1.3rem', color: '#ffd580', fontWeight: 'bold' }}>
+            🕐 {formatTime(nextWipeDate)}
+          </div>
+        </div>
+        
+        {timeLeft.expired ? (
+          <div style={{
+            textAlign: 'center',
+            fontSize: '1.5rem',
+            color: '#ffd580',
+            fontWeight: 'bold',
+            padding: '2rem'
+          }}>
+            🎉 WIPE IS LIVE! 🎉
+          </div>
+        ) : (
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '1rem',
+            flexWrap: 'wrap'
+          }}>
+            <TimeBox value={timeLeft.days} label="Days" />
+            <TimeBox value={timeLeft.hours} label="Hours" />
+            <TimeBox value={timeLeft.minutes} label="Minutes" />
+            <TimeBox value={timeLeft.seconds} label="Seconds" />
+          </div>
+        )}
+      </div>
+
       {/* What's Wiping Box */}
       <div style={{ 
         background: 'rgba(20, 20, 20, 0.4)',
@@ -156,48 +198,6 @@ const WipeSchedule = ({ nextWipeDate = '2025-10-30', nextXpWipeDate = '2026-03-0
             </div>
           )}
         </div>
-      </div>
-      
-      {/* Countdown Timer Box */}
-      <div style={{ 
-        background: 'rgba(20, 20, 20, 0.4)',
-        borderRadius: '8px',
-        padding: '1.5rem',
-        marginBottom: '1.5rem',
-        border: '1px solid rgba(80, 80, 80, 0.3)'
-      }}>
-        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-          <div style={{ fontSize: '1.1rem', color: '#ffd580', marginBottom: '0.25rem' }}>
-            📅 {formatDate(nextWipeDate)}
-          </div>
-          <div style={{ fontSize: '1.3rem', color: '#ffd580', fontWeight: 'bold' }}>
-            🕐 {formatTime(nextWipeDate)}
-          </div>
-        </div>
-        
-        {timeLeft.expired ? (
-          <div style={{
-            textAlign: 'center',
-            fontSize: '1.5rem',
-            color: '#ffd580',
-            fontWeight: 'bold',
-            padding: '2rem'
-          }}>
-            🎉 WIPE IS LIVE! 🎉
-          </div>
-        ) : (
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap'
-          }}>
-            <TimeBox value={timeLeft.days} label="Days" />
-            <TimeBox value={timeLeft.hours} label="Hours" />
-            <TimeBox value={timeLeft.minutes} label="Minutes" />
-            <TimeBox value={timeLeft.seconds} label="Seconds" />
-          </div>
-        )}
       </div>
       
       {/* General Schedule Info Box */}
