@@ -9,7 +9,8 @@ const CommandsList = () => {
     'Teleports': [
       { cmd: '/outpost', desc: 'Outpost teleport' },
       { cmd: '/bandit', desc: 'Bandit camp teleport' },
-      { cmd: '/tower1-3', desc: 'Public Heli towers' }
+      { cmd: '/tower1-6', desc: 'Public Heli towers' },
+      { cmd: '/hub', desc: 'Hub world teleport' },
     ],
     'Home Teleports': [
       { cmd: '/home add (name)', desc: 'Adds a home spawn point (Only while on a foundation)' },

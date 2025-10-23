@@ -1,3 +1,0 @@
-# Cooking System
-
-TODO

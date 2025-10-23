@@ -41,8 +41,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'features/farming',
-        'features/cooking',
         'features/virtual-quarry',
+        'features/shop',
         'features/quests',
       ],
     },

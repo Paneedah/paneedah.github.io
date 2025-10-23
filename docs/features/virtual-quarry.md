@@ -1,3 +1,3 @@
-# Virtual Quarry
+# Virtual Quarries
 
 TODO
