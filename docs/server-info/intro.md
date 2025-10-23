@@ -172,31 +172,31 @@ Here are some commands you'll use frequently:
 }}>
   <div style={{ display: 'grid', gap: '0.75rem' }}>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/st</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/st</code>
       <span style={{ color: '#a0a0a0' }}>Open Skill Tree (prestige at level 100)</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/s or /shop</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/s or /shop</code>
       <span style={{ color: '#a0a0a0' }}>Open the marketplace</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/home</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/home</code>
       <span style={{ color: '#a0a0a0' }}>Manage your home teleports</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/outpost</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/outpost</code>
       <span style={{ color: '#a0a0a0' }}>Teleport to Outpost</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/bandit</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/bandit</code>
       <span style={{ color: '#a0a0a0' }}>Teleport to Bandit Camp</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/remove</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/remove</code>
       <span style={{ color: '#a0a0a0' }}>Remove placed items (get resources back)</span>
     </div>
     <div style={{ display: 'flex', gap: '1rem', paddingLeft: '0.5rem' }}>
-      <code style={{ color: '#fbd380', minWidth: '140px' }}>/wipe</code>
+      <code style={{ color: '#fbd380', minWidth: '140px', paddingLeft: '0.5rem' }}>/wipe</code>
       <span style={{ color: '#a0a0a0' }}>Check time until next wipe</span>
     </div>
   </div>
