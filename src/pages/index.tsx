@@ -4,12 +4,35 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
+import { useEffect, useState } from 'react';
+
+function usePlayerCount(query: string) {
+  const [count, setCount] = useState<number | null>(null);
+  const [max, setMax] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function fetchCount() {
+      const res = await fetch(
+        `https://api.battlemetrics.com/servers?filter[game]=rust&filter[search]=${encodeURIComponent(query)}`
+      );
+      const data = await res.json();
+      const server = data.data[0]?.attributes;
+      if (server) {
+        setCount(server.players);
+        setMax(server.maxPlayers);
+      }
+    }
+    fetchCount();
+  }, [query]);
+
+  return { count, max };
+}
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  
+  const us = usePlayerCount('worlds.us.britspve.com'); // This needs fixing, I don't think BM supports our multi-server setup in this context.
+  const eu = usePlayerCount('worlds.eu.britspve.com'); // This needs fixing, I don't think BM supports our multi-server setup in this context.
+
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
@@ -23,12 +46,12 @@ function HomepageHeader() {
             <div className={styles.serverRow}>
               <span className={styles.region}>🇺🇸</span>
               <code className={styles.ip}>worlds.us.britspve.com</code>
-              <span className={styles.players}>0 / 100</span>
+              <span className={styles.players}>{us.count ?? '...'} / {us.max ?? '...'}</span>
             </div>
             <div className={styles.serverRow}>
               <span className={styles.region}>🇪🇺</span>
               <code className={styles.ip}>worlds.eu.britspve.com</code>
-              <span className={styles.players}>0 / 100</span>
+              <span className={styles.players}>{eu.count ?? '...'} / {eu.max ?? '...'}</span>
             </div>
           </div>
           
