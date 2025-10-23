@@ -167,7 +167,7 @@ const ServerRestarts = () => {
         <h3 style={{ color: '#ffd580', marginBottom: '1rem' }}>🌐 Connection IPs</h3>
         <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <div>
-            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>🇪🇺 Europe</div>
+            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>Europe</div>
             <code style={{ 
               background: 'rgba(251, 211, 128, 0.15)', 
               padding: '0.5rem 1rem', 
@@ -180,7 +180,7 @@ const ServerRestarts = () => {
             </code>
           </div>
           <div>
-            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>🇺🇸 United States</div>
+            <div style={{ fontSize: '0.9rem', color: '#d4d4d4', marginBottom: '0.5rem' }}>United States</div>
             <code style={{ 
               background: 'rgba(251, 211, 128, 0.15)', 
               padding: '0.5rem 1rem', 
