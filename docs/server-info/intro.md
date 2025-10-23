@@ -137,7 +137,7 @@ Welcome to BritsPVE! This guide will help you get started on your journey throug
     <ul style={{ fontSize: '0.9rem', color: '#d4d4d4' }}>
       <li><strong>W-Servers:</strong> Standard PVE worlds</li>
       <li><strong>R-Servers:</strong> Raid-enabled worlds</li>
-      <li><strong>H-Servers:</strong> Hardcore challenges</li>
+      <li><strong>H-Servers:</strong> Hub worlds</li>
     </ul>
     <div style={{ marginTop: '1rem' }}>
       <a href="/docs/server-info/connection" style={{ color: '#ffd580', textDecoration: 'none' }}>View Server List →</a>
