@@ -37,6 +37,17 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Legendary Items',
+      collapsed: false,
+      items: [
+        'legendary/drop-locations',
+        'legendary/armor-sets',
+        'legendary/weapons',
+        'legendary/tools',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Features',
       collapsed: false,
       items: [

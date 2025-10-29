@@ -1,0 +1,501 @@
+/* legendary.css */
+
+/* Info Boxes */
+.legendary-info {
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.08) 0%, rgba(22, 23, 26, 0.6) 100%);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  color: #d4d4d4;
+}
+
+.legendary-info h3 {
+  color: #ffaa44;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.legendary-info p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.legendary-info p:last-child {
+  margin-bottom: 0;
+}
+
+.legendary-info code {
+  background: rgba(255, 165, 0, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #ffaa44;
+  font-size: 0.9em;
+}
+
+/* Section Headers */
+.legendary-section-header {
+  margin: 3rem 0 2rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(255, 165, 0, 0.3);
+}
+
+.legendary-section-header h2 {
+  color: #ffaa44;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Grid layout */
+.legendary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Legendary Cards */
+.legendary-card {
+  background: linear-gradient(135deg, rgba(30, 32, 35, 0.6) 0%, rgba(22, 23, 26, 0.8) 100%);
+  border: 1px solid rgba(80, 80, 80, 0.3);
+  border-radius: 12px;
+  padding: 0;
+  color: #d4d4d4;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.legendary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffaa44 0%, #ff8844 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.legendary-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 165, 0, 0.4);
+  box-shadow: 0 12px 24px rgba(255, 165, 0, 0.2);
+}
+
+.legendary-card:hover::before {
+  opacity: 1;
+}
+
+.legendary-card h3 {
+  color: #ffaa44;
+  margin: 0;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: rgba(255, 165, 0, 0.08);
+  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendary-card-content {
+  padding: 1.5rem;
+}
+
+/* Stat groups */
+.legendary-stat-group {
+  margin-bottom: 1.5rem;
+}
+
+.legendary-stat-group:last-child {
+  margin-bottom: 0;
+}
+
+.legendary-stat-group h4 {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Stats list */
+.legendary-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 165, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(80, 80, 80, 0.2);
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.legendary-stat:last-child {
+  margin-bottom: 0;
+}
+
+.legendary-stat:hover {
+  background: rgba(255, 165, 0, 0.1);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.legendary-stat-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.legendary-stat-text {
+  color: #d4d4d4;
+  flex: 1;
+}
+
+.legendary-stat-text strong {
+  color: #ffaa44;
+  font-weight: 600;
+}
+
+/* Armor piece list */
+.armor-piece-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.armor-piece {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 165, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(80, 80, 80, 0.2);
+  transition: all 0.2s ease;
+}
+
+.armor-piece:hover {
+  background: rgba(255, 165, 0, 0.1);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.armor-piece-name {
+  color: #d4d4d4;
+  font-weight: 500;
+}
+
+.armor-piece-bonus {
+  color: #ffaa44;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Effect badge */
+.legendary-effect-badge {
+  display: block;
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 136, 68, 0.15));
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #ffaa44;
+}
+
+/* Difficulty badges */
+.difficulty-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.difficulty-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.difficulty-badge.easy {
+  background: rgba(40, 167, 69, 0.15);
+  border-color: rgba(40, 167, 69, 0.4);
+  color: #6fda8a;
+}
+
+.difficulty-badge.medium {
+  background: rgba(255, 193, 7, 0.15);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #ffc107;
+}
+
+.difficulty-badge.hard {
+  background: rgba(255, 87, 34, 0.15);
+  border-color: rgba(255, 87, 34, 0.4);
+  color: #ff8a65;
+}
+
+.difficulty-badge.expert {
+  background: rgba(156, 39, 176, 0.15);
+  border-color: rgba(156, 39, 176, 0.4);
+  color: #ce93d8;
+}
+
+.difficulty-badge.legendary {
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 68, 0, 0.15));
+  border-color: rgba(255, 165, 0, 0.5);
+  color: #ffaa44;
+}
+
+/* Item tags for drop locations */
+.item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.item-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 165, 0, 0.08);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #d4d4d4;
+  transition: all 0.2s ease;
+}
+
+.item-tag:hover {
+  background: rgba(255, 165, 0, 0.15);
+  border-color: rgba(255, 165, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.item-tag.weapon {
+  background: rgba(255, 165, 0, 0.08);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+.item-tag.weapon:hover {
+  background: rgba(255, 165, 0, 0.15);
+  border-color: rgba(255, 165, 0, 0.4);
+}
+
+.item-tag.armor {
+  background: rgba(100, 150, 255, 0.08);
+  border-color: rgba(100, 150, 255, 0.3);
+}
+
+.item-tag.armor:hover {
+  background: rgba(100, 150, 255, 0.15);
+  border-color: rgba(100, 150, 255, 0.4);
+}
+
+.item-tag.tool {
+  background: rgba(136, 221, 136, 0.08);
+  border-color: rgba(136, 221, 136, 0.3);
+}
+
+.item-tag.tool:hover {
+  background: rgba(136, 221, 136, 0.15);
+  border-color: rgba(136, 221, 136, 0.4);
+}
+
+.item-tag-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Special highlights for unique items */
+.legendary-card.legendary-special {
+  border-color: rgba(255, 165, 0, 0.4);
+}
+
+.legendary-card.legendary-special::before {
+  opacity: 1;
+}
+
+.legendary-card.legendary-special h3 {
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 136, 68, 0.1));
+}
+
+/* Tool specific styling - golden legendary theme */
+.legendary-card.legendary-tool h3 {
+  color: #ffaa44;
+}
+
+.legendary-card.legendary-tool::before {
+  background: linear-gradient(90deg, #ffaa44 0%, #ff8844 100%);
+}
+
+.legendary-card.legendary-tool:hover {
+  border-color: rgba(255, 165, 0, 0.4);
+  box-shadow: 0 12px 24px rgba(255, 165, 0, 0.2);
+}
+
+/* Weapon specific styling */
+.legendary-card.legendary-weapon h3::before {
+  content: '⚔️';
+  margin-right: 0.25rem;
+}
+
+/* Armor specific styling */
+.legendary-card.legendary-armor h3::before {
+  content: '🛡️';
+  margin-right: 0.25rem;
+}
+
+/* Gathering armor styling */
+.legendary-card.legendary-gathering h3::before {
+  content: '⚒️';
+  margin-right: 0.25rem;
+}
+
+.legendary-card.legendary-gathering h3 {
+  color: #88dd88;
+  background: rgba(136, 221, 136, 0.08);
+}
+
+.legendary-card.legendary-gathering::before {
+  background: linear-gradient(90deg, #88dd88 0%, #66bb66 100%);
+}
+
+.legendary-card.legendary-gathering:hover {
+  border-color: rgba(136, 221, 136, 0.4);
+  box-shadow: 0 12px 24px rgba(136, 221, 136, 0.2);
+}
+
+.legendary-card.legendary-gathering .armor-piece {
+  background: rgba(136, 221, 136, 0.05);
+}
+
+.legendary-card.legendary-gathering .armor-piece:hover {
+  background: rgba(136, 221, 136, 0.1);
+  border-color: rgba(136, 221, 136, 0.3);
+}
+
+.legendary-card.legendary-gathering .armor-piece-bonus {
+  color: #88dd88;
+}
+
+.legendary-card.legendary-gathering .legendary-stat {
+  background: rgba(136, 221, 136, 0.05);
+}
+
+.legendary-card.legendary-gathering .legendary-stat:hover {
+  background: rgba(136, 221, 136, 0.1);
+  border-color: rgba(136, 221, 136, 0.3);
+}
+
+.legendary-card.legendary-gathering .legendary-stat-text strong {
+  color: #88dd88;
+}
+
+.legendary-card.legendary-gathering .legendary-effect-badge {
+  background: linear-gradient(135deg, rgba(136, 221, 136, 0.2), rgba(102, 187, 102, 0.15));
+  border-color: rgba(136, 221, 136, 0.4);
+  color: #88dd88;
+}
+
+/* Requirement notice */
+.legendary-requirement {
+  margin-bottom: 1.5rem;
+}
+
+.legendary-requirement:last-child {
+  margin-bottom: 0;
+}
+
+.legendary-requirement h4 {
+  font-size: 0.85rem;
+  color: #ffaaaa;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.legendary-requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 68, 68, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.legendary-requirement-item:last-child {
+  margin-bottom: 0;
+}
+
+.legendary-requirement-item:hover {
+  background: rgba(255, 68, 68, 0.1);
+  border-color: rgba(255, 68, 68, 0.4);
+}
+
+.legendary-requirement-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.legendary-requirement-text {
+  color: #ffaaaa;
+  flex: 1;
+}
+
+.legendary-requirement-text strong {
+  color: #ff8888;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legendary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .legendary-info {
+    padding: 1.5rem;
+  }
+  
+  .legendary-card h3 {
+    font-size: 1.25rem;
+    padding: 1.25rem;
+  }
+  
+  .legendary-card-content {
+    padding: 1.25rem;
+  }
+  
+  .legendary-section-header h2 {
+    font-size: 1.5rem;
+  }
+}
