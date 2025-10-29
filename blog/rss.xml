@@ -4,17 +4,35 @@
         <title>BritRust Wiki Blog</title>
         <link>https://britrust.com/blog</link>
         <description>BritRust Wiki Blog</description>
-        <lastBuildDate>Thu, 23 Oct 2025 18:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Oct 2025 18:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[29th October | 🎃 Halloween Sale]]></title>
+            <link>https://britrust.com/blog/halloween-sale-2025</link>
+            <guid>https://britrust.com/blog/halloween-sale-2025</guid>
+            <pubDate>Wed, 29 Oct 2025 18:00:00 GMT</pubDate>
+            <description><![CDATA[20% off EVERYTHING in the store until November 1st. Don't miss out on this spooky sale!]]></description>
+            <content:encoded><![CDATA[<br>
+<div class="halloween-hero"><h2 class="halloween-title">🎃 SPOOKY SALE 🎃</h2><p class="halloween-warning"></p><p>20% OFF EVERYTHING — No tricks, just treats! 🍬</p><p></p><div class="halloween-line"></div></div>
+<div class="halloween-container"><p class="halloween-intro">The deals are here! 👻</p><p></p><p>Halloween is the perfect time to treat yourself, and we're making it even sweeter.<br>
+<strong>Everything in the store is 20% off until November 1st.</strong></p><p></p><p></p><p>VIP packages, Airdrops — you name it, it's discounted.<br>
+<!-- -->This is hands down the best sale we've run all year, so don't sleep on it.</p><p></p><hr><div class="spooky-section"><h2>🎃 THE DEAL 🎃</h2><div class="spooky-grid"><div class="spooky-item"><h3>💀 20% Off EVERYTHING</h3><p>No exclusions. No fine print. Every single item in the store is discounted. Stack your perks, upgrade your gameplay, and save while you're at it.</p></div><div class="spooky-item"><h3>⏰ Until November 1st</h3><p>You've got until the clock strikes midnight on November 1st. Once Halloween ends, so does this sale — and trust me, you'll regret missing it.</p></div><div class="spooky-item"><h3>🛒 Head to the Store</h3><p>Visit <a href="https://store.britspve.com/" target="_blank" rel="noopener noreferrer" style="color:#ff7518;font-weight:700;text-decoration:none;border-bottom:2px solid #ff7518">store.britspve.com</a> and grab what you've been eyeing. Whether you're a new player or a veteran, there's something for everyone.</p></div><div class="spooky-item"><h3>📹 New Video Coming</h3><p>I'm working on a new video today, so keep an eye on the channel! More content, more chaos, more Rust. Let's gooo! 🎬</p></div></div></div><hr><div class="spooky-outro"><p class="spooky-outro-text"></p><p>Thank you all for the continued support — you make this server what it is. 🧡<br>
+Now go treat yourself before this sale vanishes! 🎃</p><p></p><p><strong>— Brit</strong></p></div></div>]]></content:encoded>
+            <category>halloween</category>
+            <category>sale</category>
+            <category>rust</category>
+            <category>store</category>
+        </item>
         <item>
             <title><![CDATA[23rd October | 🎃 Halloween Update]]></title>
             <link>https://britrust.com/blog/halloween-update-2025</link>
             <guid>https://britrust.com/blog/halloween-update-2025</guid>
             <pubDate>Thu, 23 Oct 2025 18:00:00 GMT</pubDate>
             <description><![CDATA[Server announcement for the 2025 Halloween event — featuring custom dungeons, haunted graveyards, flying pumpkin drones, and more!]]></description>
-            <content:encoded><![CDATA[<div class="halloween-hero"><h2 class="halloween-title">🎃 HALLOWEEN UPDATE &amp; CUSTOM SPOOKINESS 🎃</h2><p class="halloween-warning"></p><p>The servers are going offline for Facepunch's Halloween update… but beware, our own terrors await when you log back in! 👻</p><p></p><div class="halloween-line"></div></div>
+            <content:encoded><![CDATA[<br>
+<div class="halloween-hero"><h2 class="halloween-title">🎃 HALLOWEEN UPDATE &amp; CUSTOM SPOOKINESS 🎃</h2><p class="halloween-warning"></p><p>The servers are going offline for Facepunch's Halloween update… but beware, our own terrors await when you log back in! 👻</p><p></p><div class="halloween-line"></div></div>
 <div class="halloween-container"><p class="halloween-intro">Hey survivors! 👻</p><p></p><p>The time has come… Facepunch's annual Halloween update is here!<br>
 <!-- -->Our servers will be going offline shortly for a mandatory update and restart to bring in all the official Halloween goodness.</p><p></p><p></p><p><strong>But that's not all—</strong><br>
 When the lights come back on (or rather, when the fog rolls in 😈)… you'll find we've added our own horrifying twists to make this year's haunt extra deadly!</p><p></p><hr><div class="spooky-section"><h2>🎃 OUR HALLOWEEN ADDITIONS 🎃</h2><div class="spooky-grid"><div class="spooky-item"><h3>💀 Fully Revamped Dungeons</h3><p>Each level now features a unique spooky theme, with bosses boasting improved loot drops for those daring enough to descend into the darkness.</p></div><div class="spooky-item"><h3>🎃 New Locked Crate Event – Radtown</h3><p>A fresh event awaits: hack a locked crate while waves of flying pumpkin drones try to obliterate it (and you). Defend it if you can - the rewards are worth the fright!</p></div><div class="spooky-item"><h3>🪦 Graveyards (Night Only)</h3><p>When darkness falls, graveyards rise. Hunt the undead and loot the treasures they guard... if you survive till dawn.</p></div><div class="spooky-item"><h3>👁️ Even More Spooky Surprises</h3><p>We've tucked a few extra chills and thrills around the world—some sweet, some sinister. Keep your eyes peeled… and your weapon loaded.</p></div></div></div><hr><div class="spooky-outro"><p class="spooky-outro-text"></p><p>🕯️ So grab your flashlights, polish your pumpkins, and prepare to scream.<br>
