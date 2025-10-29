@@ -9,6 +9,8 @@ description: "Server announcement for the 2025 Halloween event — featuring cus
 
 import '/src/css/halloween.css';
 
+<br/>
+
 <div className="halloween-hero">
   <h2 className="halloween-title">🎃 HALLOWEEN UPDATE & CUSTOM SPOOKINESS 🎃</h2>
 
